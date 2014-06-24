@@ -53,12 +53,12 @@ int main( void )
     UART_BUF[11] = Byte8H((s16)(Gyr.TrueZ*100));
 
 #ifdef USE_SENSOR_MAG
-    UART_BUF[12] = Byte8L((s16)(Mag.TrueX));      // 100 nTesla/LSB
-    UART_BUF[13] = Byte8L((s16)(Mag.TrueX));
-    UART_BUF[14] = Byte8L((s16)(Mag.TrueY));      // 100 nTesla/LSB
-    UART_BUF[15] = Byte8H((s16)(Mag.TrueY));
-    UART_BUF[16] = Byte8L((s16)(Mag.TrueZ));      // 100 nTesla/LSB
-    UART_BUF[17] = Byte8H((s16)(Mag.TrueZ));
+    UART_BUF[12] = Byte8L((s16)(Mag.X));      // 100 nTesla/LSB
+    UART_BUF[13] = Byte8H((s16)(Mag.X));
+    UART_BUF[14] = Byte8L((s16)(Mag.Y));      // 100 nTesla/LSB
+    UART_BUF[15] = Byte8H((s16)(Mag.Y));
+    UART_BUF[16] = Byte8L((s16)(Mag.Z));      // 100 nTesla/LSB
+    UART_BUF[17] = Byte8H((s16)(Mag.Z));
 #endif
 
 #ifdef USE_SENSOR_TEMP
@@ -84,7 +84,7 @@ int main( void )
     UART_BUF[31] = Byte8H((s16)(Baro.Height));
 #endif
 
-    RS232_VisualScope(UART_BUF+20); // Print Acc
+    RS232_VisualScope(UART_BUF+12); // Print Acc
   }
 }
 /*====================================================================================================*/

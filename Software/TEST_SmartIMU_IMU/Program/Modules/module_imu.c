@@ -143,9 +143,9 @@ void Sensor_Read( u16 ReadFreg )
   Gyr.Z  = Byte16(s16, ReadBuf[12], ReadBuf[13]); // Gyr.Z
 
 #ifdef USE_SENSOR_MAG
-  Mag.Z  = Byte16(s16, ReadBuf[14], ReadBuf[15]); // Mag.X
-  Mag.Z  = Byte16(s16, ReadBuf[16], ReadBuf[17]); // Mag.Y
-  Mag.Z  = Byte16(s16, ReadBuf[18], ReadBuf[19]); // Mag.Z
+  Mag.X  = Byte16(s16, ReadBuf[15], ReadBuf[14]); // Mag.X
+  Mag.Y  = Byte16(s16, ReadBuf[17], ReadBuf[16]); // Mag.Y
+  Mag.Z  = Byte16(s16, ReadBuf[19], ReadBuf[18]); // Mag.Z
 #endif
 
 #ifdef USE_SENSOR_TEMP
